@@ -1,0 +1,220 @@
+*{
+  margin:0;
+  padding: 0;
+}
+.fondo{
+  background: url('assets/imagenes/Fondos/redes.jpg') top center no-repeat;
+  height: 110vh;
+  background-attachment:fixed;
+}
+
+.Nosotros{
+  background: url('assets/imagenes/Fondos/trabajo.jpg') no-repeat center center fixed;
+  background-color: #040303d4;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.8;
+  height: 120vh;
+  position:relative;
+  background-attachment:fixed;
+}
+
+.boton {
+    padding: 6px;
+    width: 128px;
+    border:3px solid yellow;
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+}
+
+.Nosotros .contenido-nosotros{
+  position:absolute;
+  top:2;
+}
+
+.services{
+  padding: 40px 0 !important;
+  text-decoration-color: yellowgreen;
+  font-size: 20px;
+  color: yellow;
+}
+
+.fondo img{
+  animation-name: animar;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.Logo img{
+  position: static;
+  top: 0;
+  left: 0;
+  z-index: 9999999 !important;
+  animation-name: animar;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  }
+
+.redes-sociales .iconos{
+  padding: 15px;
+
+}
+.icono-whatsapp{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+@keyframes animar{
+  0% {
+    right: 0;
+    top: 0;
+  }
+  10% {
+    right: 5rem;
+    top: 0rem;
+  }
+  30% {
+    top: 5rem;
+    right: 5rem;
+  }
+  60%{
+    top: 5rem;
+    right: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+.iconos a i{
+  padding: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.other_services {
+  background: #f8f9fa;
+	background: url('assets/imagenes/Fondos/cuidad.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment:fixed;
+  height: 100vh;
+}
+.other_services .grid {
+    box-shadow: 3px 3px 5px 0 rgba(76, 110, 245, .1);
+}
+.other_services .grid:hover{
+	box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1)
+}
+
+.other_services2 {
+  background: #f8f9fa;
+	background: url('assets/imagenes/Fondos/cuidad.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment:fixed;
+  height: 100vh;
+}
+.other_services2 .grid {
+    box-shadow: 3px 3px 5px 0 rgba(76, 110, 245, .1);
+}
+.other_services2 .grid:hover{
+	box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1)
+}
+
+/*Boton Contactanos */
+.grid a {
+    background: #00CBFD;
+    border: 2px solid rgb(18, 172, 211);
+    border-radius: 5px;
+    color: yellow;
+	  font-size: 16px;
+	  font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 9px 25px;
+    display: inline-block;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.p-4 {
+	padding: 1.5rem !important;
+	background-color:rgb(231, 231, 60);
+}
+
+.pt-5, .py-5 {
+    padding-top: 3rem !important;
+    top:2;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.grid p {
+    color: rgb(5, 42, 51);
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem !important;
+}
+.mt-3, .my-3 {
+    margin-top: 1rem !important;
+}
+
+p {
+    margin: 0;
+    line-height: 2em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+section {
+    display: block;
+}
+h3.heading {
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #343a40;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer{
+	background: linear-gradient(rgb(27, 132, 192), rgb(41, 6, 168));
+	padding: 40px;
+	color:#ffffff;
+  }
+
+
+  #form1 label{
+    color: yellow !important;
+  }

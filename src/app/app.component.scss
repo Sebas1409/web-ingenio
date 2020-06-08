@@ -1,0 +1,187 @@
+$moviles: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+/* ---------------------------------- */
+/* Back to top
+------------------------------------- */
+#backtotop {
+	position: fixed;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	bottom: 25px;
+	margin: 0 25px 0 0;
+	z-index: 999;
+	transition: 0.35s;
+	transform: scale(0.7);
+}
+
+#backtotop.visible {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
+
+#backtotop a {
+	text-decoration: none;
+	border: 0 none;
+	display: block;
+	width: 46px;
+	height: 46px;
+	background-color: #32caef;
+	opacity: 1;
+    transition: all 0.3s;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 26px
+}
+
+body #backtotop a { color: #fff; }
+
+#backtotop a:after {
+	content: "\f106";
+	font-family: "FontAwesome";
+	position: relative;
+	display: block;
+	top: 50%;
+	-webkit-transform: translateY(-55%);
+  transform: translateY(-55%);
+  color: blue;
+  cursor: pointer;
+}
+
+
+.card{
+  height: 450px !important;
+  border:none !important;
+  box-shadow: 3px 3px 5px 0 rgba(76, 110, 245, .1);
+}
+
+.card:hover{
+  margin-top: -2px;
+  transition: 1s;
+}
+
+.card-body{
+  background-color:rgb(231, 231, 60);
+}
+.card-body p{
+font-size: 2vh !important;
+}
+
+.card-body a{
+    background: #00CBFD;
+    border: 2px solid rgb(18, 172, 211);
+    border-radius: 5px;
+    color: yellow;
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 9px 25px;
+    display: inline-block;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+hr{
+  border-bottom: 1px solid #ccc;
+}
+.row{
+  margin: 0 !important;
+}
+@media #{$moviles} {
+
+  .logo-central{
+    left: 15% !important;
+  }
+
+.element{
+  font-size: 4.5vh !important;
+}
+
+.fondo-nosotros{
+  height: 280vh !important;
+    /* background: #212529; */
+    /* opacity: .6; */
+}
+.other_services,.other_services2{
+  background: url('../assets/imagenes/fondo-responsivo/ciudad-responsive.jpg') no-repeat center center fixed !important;
+  width: 100vw !important;
+  height: 327.5vh !important
+}
+
+
+.Nosotros{
+  background: url('../assets/imagenes/fondo-responsivo/aula-responsive.jpg') no-repeat center center fixed !important;
+  width: 100%;
+  width: 100vw !important;
+  height: 280vh !important
+}
+
+.ocultar-responsive{
+  display: none;
+}
+
+.card{
+  height: auto !important;
+  margin-bottom: 9px !important;
+}
+.card-body p{
+  font-size: 2vh !important;
+  }
+  .footer{
+    padding: 40px 0 0 0 !important;
+  }
+  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    padding-right: 0px !important;
+ }
+
+}
+
+@media #{$tablet} {
+  .logo-central{
+    left: 35% !important;
+  }
+  .Nosotros{
+    height: 150vh !important;
+  }
+  .fondo-nosotros{
+    height: 150vh !important;
+  }
+  .ocultar-desktop{
+    display: none;
+  }
+  .other_services,.other_services2{
+    height: 205vh !important
+  }
+
+}
+@media #{$desktop} {
+  .ocultar-desktop{
+    display: none;
+  }
+  .other_services,.other_services2{
+    height: 120vh !important
+  }
+
+}
+
+
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+   padding-left: 0px !important;
+}
+
+.redes-footer a{
+  color:yellow !important;
+  cursor: pointer;
+}
+.redes-footer a:hover{
+  opacity: .6;
+}
+
+.fb-like{
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+}
