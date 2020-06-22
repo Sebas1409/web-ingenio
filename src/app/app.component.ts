@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     descripcion:null
   }
   login_loading: boolean = false;
-  public secciones: Array<string> = ['Nosotros','NuestrosServicios','Contáctano'];
+  public secciones: Array<string> = ['Nosotros','NuestrosServicios','Contáctanos'];
   constructor(private fcorreo:FcorreosService){}
   ngOnInit(){
 

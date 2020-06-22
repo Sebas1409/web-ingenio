@@ -64,6 +64,9 @@ body #backtotop a { color: #fff; }
 
 .card-body{
   background-color:rgb(231, 231, 60);
+  h5{
+    font-size: 1.15rem !important;
+  }
 }
 .card-body p{
 font-size: 2vh !important;
@@ -104,10 +107,25 @@ hr{
     /* background: #212529; */
     /* opacity: .6; */
 }
-.other_services,.other_services2{
+.other_services{
   background: url('../assets/imagenes/fondo-responsivo/ciudad-responsive.jpg') no-repeat center center fixed !important;
   width: 100vw !important;
-  height: 327.5vh !important
+  /* height: 285.5vh !important */
+  height: 1835px !important;
+  .fondo-otro-servicio{
+    height: 1835px!important;
+    background-color: #010a628f;
+  }
+}
+.other_services2{
+  background: url('../assets/imagenes/fondo-responsivo/ciudad-responsive.jpg') no-repeat center center fixed !important;
+  width: 100vw !important;
+/*   height: 277.5vh !important */
+height:   1895px !important;
+.fondo-otro-servicio2{
+  height: 1895px!important;
+  background-color: #010a628f;
+}
 }
 
 
@@ -143,16 +161,19 @@ hr{
     left: 35% !important;
   }
   .Nosotros{
-    height: 150vh !important;
+    height: 165vh !important;
   }
   .fondo-nosotros{
-    height: 150vh !important;
+    height: 165vh !important;
   }
   .ocultar-desktop{
     display: none;
   }
-  .other_services,.other_services2{
-    height: 205vh !important
+  .other_services{
+    height: 173.5vh !important
+  }
+  .other_services2{
+    height: 162vh !important
   }
 
 }
@@ -160,8 +181,17 @@ hr{
   .ocultar-desktop{
     display: none;
   }
-  .other_services,.other_services2{
-    height: 120vh !important
+  .other_services{
+    height: 630px !important;
+    .fondo-otro-servicio{
+      height: 630px !important;
+    }
+  }
+  .other_services2{
+    height: 540px !important;
+    .fondo-otro-servicio2{
+      height: 540px !important;
+    }
   }
 
 }
