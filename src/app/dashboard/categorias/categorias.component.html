@@ -1,0 +1,65 @@
+<div class="ms-content-wrapper menu-grid">
+  <app-breadcrumb></app-breadcrumb> 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ms-panel">
+        <div class="ms-panel-header">
+          <div class="d-flex justify-content-between">
+            <div class="ms-header-text">
+              <h6>Category List</h6>
+              <p>Aquí se listaran todas las categorias</p>
+            </div>
+            <button type="button" class="btn btn-outline-primary ms-graph-metrics" name="button"
+              routerLink="/dash/categorias/registrar">Add New Category</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
+          *ngFor="let item of listadoCategorias | paginate: { itemsPerPage: 9, currentPage: page }">
+          <div class="ms-card">
+            <div class="ms-card-img">
+              <img [src]="item.image | imagen" [alt]="item.name">
+            </div>
+            <div class="ms-card-body">
+              <div class="new">
+                <h6 class="mb-0">{{item.name}} </h6>
+                <!-- <h6 class="ms-text-primary mb-0">${{item.price | number:'1.2-2'}}</h6> -->
+              </div>
+              <div class=" met">
+                <div>Qty:{{item.products?item.products.length:'0'}} </div>
+                <!--<span class="badge badge-primary" *ngIf="item.status === 'Out Of Stock'">Out of
+                  Stock</span>
+                <span class="badge badge-success" *ngIf="item.status === 'In Stock'">In Stock</span>-->
+                <div style="height: 75px;">
+                  <span *ngIf="item.activated_dates && item.activated_dates.length == 0"
+                    class="badge badge-gradient-danger"> Sin Fechas Disponibles </span>
+                  <span *ngFor="let act of item.activated_dates" class="badge" [ngClass]="{  'badge-gradient-primary': act == 0,
+                                    'badge-gradient-success': act == 1,'badge-gradient-light': act == 2,
+                                    'badge-gradient-secondary': act == 3,'badge-gradient-warning': act == 4,
+                                    'badge-gradient-info': act == 5,'badge-gradient-dark': act == 6}">
+                    {{act | diaSemana}}
+                  </span>
+                </div>
+
+              </div>
+              <p style="height: 130px;">{{item.short_description}}</p>
+              <div class="new mb-0">
+                <button class="btn grid-btn mt-0 btn-sm btn-primary" title="Eliminar"> <i class="fas fa-trash-alt"></i> </button>
+                <button  title="Detalle" class="btn grid-btn mt-0 btn-sm btn-info" routerLink="/dash/categorias/detalle/{{item._id}}"> <i class="fas fa-list-alt"></i> </button>
+                <button title="Editar"  class="btn grid-btn mt-0 btn-sm btn-warning" routerLink="/dash/categorias/editar/{{item._id}}"> <i class="fas fa-edit"></i> </button> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination justify-content-center">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

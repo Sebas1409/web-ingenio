@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Lunes",
+        "isChecked": false
+    },
+    {
+        "id": 2,
+        "name": "Martes",
+        "isChecked": false
+    },
+    {
+        "id": 3,
+        "name": "Miércoles",
+        "isChecked": false
+    },
+    {
+        "id": 4,
+        "name": "Jueves",
+        "isChecked": false
+    },
+    {
+        "id": 5,
+        "name": "Viernes",
+        "isChecked": false
+    },
+    {
+        "id": 6,
+        "name": "Sábado",
+        "isChecked": false
+    },
+    {
+        "id": 0,
+        "name": "Domingo",
+        "isChecked": false
+    }
+]

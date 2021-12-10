@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "linktext": "Categorias",
+        "iconclass": "material-icons fs-16",
+        "icon": "dashboard",
+        "child": true,
+        "link" : "/dash/categorias",
+        "submenu": [
+            {
+                "id": 1.1,
+                "linktext": "Listado",
+                "link": "/dash/categorias"
+            },
+            {
+                "id": 1.2,
+                "linktext": "Registrar",
+                "link": "/dash/categorias/registrar"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "linktext": "Productos",
+        "iconclass": "fa fa-archive fs-16",
+        "icon": "",
+        "child": true,
+        "submenu": [
+            {
+                "id": 2.1,
+                "linktext": "Listado",
+                "link": "/dash/productos"
+            },
+            {
+                "id": 2.2,
+                "linktext": "Registrar",
+                "link": "/dash/productos/registrar"
+            }
+           
+        ]
+    },
+    {
+        "id": 3,
+        "linktext": "Invoice",
+        "iconclass": "fas fa-file-invoice fs-16",
+        "icon": "",
+        "child": true,
+        "submenu": [
+            {
+                "id": 3.1,
+                "linktext": "Invoice Detail",
+                "link": "/invoice/invoice-detail"
+            },
+            {
+                "id": 3.2,
+                "linktext": "Invoice List",
+                "link": "/invoice/invoice-list"
+            }
+        ]
+    }
+]

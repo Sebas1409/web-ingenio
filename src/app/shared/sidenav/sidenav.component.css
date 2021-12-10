@@ -1,0 +1,14 @@
+:ng-host ::ng-deep .nav-accordion.accordion .card .card-header .btn:after {
+    content: '\e314' !important;
+    font-family: 'Material Icons';
+    font-weight: 700;
+    font-style: normal;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    transition: 0.3s;
+}
+
+.side-nav .logo-sn a {
+    padding: 6.5px 0 !important;
+}

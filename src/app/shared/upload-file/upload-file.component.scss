@@ -1,0 +1,31 @@
+.imagen-acta{
+    background: #f9d799;
+    position: relative;
+    margin: 5px auto;
+  
+    img{
+      width: 100% !important;
+    }
+  
+    .opciones-upload {
+      position: absolute;
+      overflow: hidden;
+      top: 15px;
+      right: 0px;
+  
+      input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+  
+      .btn {
+        width: 100% !important;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 0px !important;
+      }
+    }
+  }

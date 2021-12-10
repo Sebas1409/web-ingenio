@@ -1,0 +1,29 @@
+<!--<breadcrumb #parent>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb pl-0">
+            <ng-template ngFor let-route [ngForOf]="parent.breadcrumbs">
+                <li class="breadcrumb-item"><a routerLink="/"><i class="material-icons">home</i> Home</a></li>
+                <li *ngIf="!route.terminal" class="breadcrumb-item">
+                    <a href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
+                </li>
+                <li *ngIf="route.terminal" class="breadcrumb-item active" aria-current="page">{{
+                    route.displayName }}</li>
+            </ng-template>
+        </ol>
+    </nav>
+</breadcrumb>-->
+
+<div class="col-md-12">
+    <nav aria-label="">
+        <ol class="breadcrumb breadcrumb-arrow-sep" >
+            <li *ngFor="let item of menus;let i=index"  class="breadcrumb-item" [ngClass]="{'active': i==1}" >
+                <a routerLink="{{item.rutaAnterior}}" *ngIf="i==0">
+                    <i class="material-icons">home</i>
+                        {{item.path.toString().charAt(0).toUpperCase() + item.path.toString().slice(1)}}
+                </a>
+                <span *ngIf="i==1"> {{item.path.toString().charAt(0).toUpperCase() + item.path.toString().slice(1)}} </span>
+            </li>
+            <!--<li class="breadcrumb-item active" aria-current="page">Library</li>-->
+        </ol>
+    </nav>
+</div>

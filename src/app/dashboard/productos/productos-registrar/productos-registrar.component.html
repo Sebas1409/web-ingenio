@@ -1,0 +1,246 @@
+<div class="ms-content-wrapper produt-detail">
+  <div class="row">
+    <div class="col-md-12">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+    <div class="col-md-12">
+      <div class="ms-panel">
+        <div class="ms-panel-header">
+          <div class="d-flex justify-content-between">
+            <div class="ms-header-text">
+              <h6>Product Add</h6>
+              <p>Quick overview on your social media platforms</p>
+            </div>
+            <button type="button" class="btn btn-outline-primary ms-graph-metrics" name="button"
+              routerLink="/dash/productos">
+              << Regresar </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <form class="needs-validation clearfix" [formGroup]="contactForm" (validSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-xl-7 col-md-7">
+        <div class="ms-panel ms-panel-fh">
+          <div class="ms-panel-header">
+            <h6>Add Product Form</h6>
+          </div>
+          <div class="ms-panel-body">
+            <div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="name">
+                      <strong>Product Name</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="name" name="name" formControlName="name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="categorias">
+                      <strong>Select Catagory</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <select [(ngModel)]="idCategory" class="form-control" id="categorias"  name="categorias" [ngModelOptions]="{standalone: true}" (change)="seleccionarCatgeoria($event)">
+                        <option [value]="''" [disabled]="true"> Select </option>
+                        <option [value]="cat._id" *ngFor="let cat of listadoCategorias"> {{ cat.name }}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="tag">
+                      <strong>Add Tags</strong></small>
+                    <div class="input-group">
+                      <input [(ngModel)]="tag" class="form-control" id="tag" name="tag" [ngModelOptions]="{standalone: true}">
+                      <div class="input-group-append">
+                        <a (click)="addTag()" class="input-group-text  btn-secondary" title="Add Tags"
+                          style="cursor: pointer;color: white;"><i class="fa-plus fas"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 table-responsive" *ngIf="this.contactForm['controls'].tags.value.length>0">
+                  <table class="table w-100 thead-primary">
+                    <thead>
+                      <tr>
+                        <th [width]="'95%'">Tags</th>
+                        <th >Option</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tag of this.contactForm['controls'].tags.value;let i=index">
+                        <td>{{tag}} </td>
+                        <td align="center"><i (click)="deleteTag(i)" title="Delete" class="fas fa-trash-alt fa-sm text-danger"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="sku">
+                      <strong>Sku</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="sku" name="sku" formControlName="sku">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="lb">
+                      <strong>Lb</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="lb" name="lb" formControlName="lb">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="oz">
+                      <strong>Oz</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="oz" name="oz" formControlName="oz">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="quantity">
+                      <strong>Quantity</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="quantity" name="quantity" formControlName="quantity">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="price">
+                      <strong>Price</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="price" name="price" formControlName="price">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <small class="control-label" for="details"> <strong>Details (Max: {{ 125 -
+                        contactForm['controls'].details.value.length}} letras) </strong>
+                    </small>
+                    <textarea class="form-control" rows="3" id="details" name="details" [maxlength]="125"
+                      formControlName="details"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <small class="control-label" for="description"> <strong>Description</strong>
+                    </small>
+                    <textarea class="form-control" rows="6" id="description" name="description"
+                      formControlName="description"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="ms-panel">
+              <div class="ms-panel-header">
+                <h6>Product </h6>
+              </div>
+              <div class="ms-panel-body">
+                <ngb-carousel class="ms-dotted-indicator-slider" [showNavigationArrows]="true"
+                    [showNavigationIndicators]="true">
+                    <ng-template ngbSlide *ngFor="let lstImg of listadoImagenes;let i=index">
+                        <img [src]="lstImg.image | imagen" alt="{{lstImg.title}}">
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+              <div class="ms-panel-body">
+                <upload-file [optionsFile]='optionsFile' (readFile)="readFile($event)"></upload-file>
+              </div>
+              <div class="ms-panel-header new header-oferta">
+                <p class="medium">Product Available</p>
+                <div>
+                  <label class="ms-switch">
+                    <input type="checkbox" id="activated" name="activated" formControlName="activated">
+                    <span class="ms-switch-slider ms-switch-success round"></span>
+                  </label>
+                </div>
+              </div>
+              <!--<div class="ms-panel-header new">
+                <p class="medium">Discount Active</p>
+                <div>
+                  <label class="ms-switch">
+                    <input type="checkbox" checked="">
+                    <span class="ms-switch-slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="ms-panel-header new">
+                <button class="btn btn-primary" >Submit form</button>
+              </div>-->
+              <div class="header-oferta">
+                <div class="col-md-">
+                  <div class="form-group">
+                    <small class="control-label control-label-xs" for="offer_price">
+                      <strong>Offer Price</strong></small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                      </div>
+                      <input class="form-control" id="offer_price" name="offer_price" formControlName="offer_price">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-">
+                  <div class="form-group">
+                    <small class="control-label" for="text_offer"> <strong>Offer Text</strong>
+                    </small>
+                    <textarea class="form-control" rows="3" id="text_offer" name="text_offer"
+                      formControlName="text_offer"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-">
+                  <button class="btn btn-primary" style="margin: 10px 0;">Submit form</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>

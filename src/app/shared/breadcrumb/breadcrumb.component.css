@@ -1,0 +1,9 @@
+.material-icons {
+    vertical-align: sub;
+    font-weight: 500;
+    font-size: 21px !important;
+}
+
+.breadcrumb-item.active span{
+    color: #ff0018;
+}

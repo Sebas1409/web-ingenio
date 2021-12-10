@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+<section class="section-padding contact-top bg-light-theme">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="contact-info-box mb-md-40">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h6 class="text-theme fw-600">13th Street. 47 W 13th St,<br> New York, NY 10011, USA</h6>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="contact-info-box mb-md-40">
+                    <i class="fas fa-phone-alt"></i>
+                    <h6 class="text-theme fw-600"><a href="#" class="text-theme">(+347) 123 4567 890</a><br> Mon-Sat
+                        9:00am-5:00pm</h6>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="contact-info-box">
+                    <i class="fas fa-envelope"></i>
+                    <h6 class="text-theme fw-600"><a href="#" class="text-theme">info@domain.com</a><br> 24 X 7 online
+                        support</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-padding contact-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-header-left title">
+                    <h3 class="text-light-black header-title">Get In Touch</h3>
+                </div>
+                <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                    <div class="row clearfix">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="name" [(ngModel)]="model.name"
+                                    class="form-control form-control-submit" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" [(ngModel)]="model.email"
+                                    class="form-control form-control-submit" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" [(ngModel)]="model.phone"
+                                    class="form-control form-control-submit" placeholder="Phone No." required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" [(ngModel)]="model.subject"
+                                    class="form-control form-control-submit" placeholder="Subject" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea name="message" [(ngModel)]="model.message"
+                                    class="form-control form-control-submit" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"
+                                siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha>
+                            <button type="submit" class="btn-second btn-submit"
+                                [disabled]="!contactForm.form.valid">Submit</button>
+                            <!-- Form Messages -->
+                            <div class="service-error mt-4 w-100" *ngIf="error">
+                                <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">
+                                    <strong>Oops!</strong> Something bad happened. Please try again later.
+                                </ngb-alert>
+                            </div>
+                            <div [hidden]="!submitted" class="contact-message w-100">
+                                <div *ngIf="model.id" class="contact-success w-100 mt-4">
+                                    <ngb-alert type="success" class="mb-0 w-100" [dismissible]="false">
+                                        <strong>Success!</strong> Contact form has been successfully submitted.
+                                    </ngb-alert>
+                                </div>
+                            </div>
+                            <!-- Form Messages -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="contact-map">
+    <iframe
+        src="https://maps.google.com/maps?q=university%20of%20san%20francisco&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+</div>
+<app-footer2></app-footer2>

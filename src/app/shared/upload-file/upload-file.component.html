@@ -1,0 +1,10 @@
+<div class="imagen-acta">
+    <img *ngIf="!imgTemporal" class="imagen-upload" [src]="url_imagen | imagen"
+        onerror="this.src='assets/img/upload_image.png'" alt="{{nombre_imagen}}">
+    <img *ngIf="imgTemporal" class="imagen-upload" [src]="url_imagen" onerror="this.src='assets/img/upload_image.png'"
+        alt="{{nombre_imagen}}">
+    <div class="opciones-upload">
+        <button class="btn" style="cursor: pointer;">Imagen  {{size}} </button>
+        <input type="file" name="myfile" accept="image/*" (change)="seleccionar_archivo($event);" />
+    </div>
+</div>

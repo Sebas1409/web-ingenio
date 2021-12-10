@@ -1,0 +1,62 @@
+<div class="ms-content-wrapper menu-grid">
+    <app-breadcrumb></app-breadcrumb> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ms-panel">
+          <div class="ms-panel-header">
+            <div class="d-flex justify-content-between">
+              <div class="ms-header-text">
+                <h6>Product List</h6>
+                <p>Aquí se listaran todas las categorias</p>
+              </div>
+              <button type="button" class="btn btn-outline-primary ms-graph-metrics" name="button"
+                routerLink="/dash/productos/registrar">Add New Category</button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
+            *ngFor="let item of listadoProductos | paginate: { itemsPerPage: 9, currentPage: page }">
+            <div class="ms-card">
+              <div class="ms-card-img">
+                <img [src]="item.uploads[0].image | imagen" [alt]="item.name">
+              </div>
+              <div class="ms-card-body">
+                <div class="new">
+                  <h6 class="mb-0">{{item.name}} </h6>
+                  <!-- <h6 class="ms-text-primary mb-0">${{item.price | number:'1.2-2'}}</h6> -->
+                </div>
+                <div class=" met">
+                  <div>Qty:{{'0'}} </div>
+                  <!--<span class="badge badge-primary" *ngIf="item.status === 'Out Of Stock'">Out of
+                    Stock</span>
+                  <span class="badge badge-success" *ngIf="item.status === 'In Stock'">In Stock</span>-->
+                  <div style="height: 75px;">
+                    <span *ngIf="item.tags && item.tags.length == 0"
+                      class="badge badge-gradient-danger"> Sin Fechas Disponibles </span>
+                    <span *ngFor="let act of item.tags" class="badge badge-gradient-info">
+                      {{act}}
+                    </span>
+                  </div>
+  
+                </div>
+                <p style="height: 130px;">{{item.details}}</p>
+                <div class="new mb-0">
+                  <button class="btn grid-btn mt-0 btn-sm btn-primary" title="Eliminar"> <i class="fas fa-trash-alt"></i> </button>
+                  <button  title="Detalle" class="btn grid-btn mt-0 btn-sm btn-info" routerLink="/dash/productos/detalle/{{item._id}}"> <i class="fas fa-list-alt"></i> </button>
+                  <button title="Editar"  class="btn grid-btn mt-0 btn-sm btn-warning" routerLink="/dash/productos/editar/{{item._id}}"> <i class="fas fa-edit"></i> </button> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination justify-content-center">
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>

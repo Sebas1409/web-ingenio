@@ -1,0 +1,150 @@
+<div class="ms-content-wrapper produt-detail">
+  <div class="row">
+    <div class="col-md-12">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+    <div class="col-md-12">
+      <div class="ms-panel">
+        <div class="ms-panel-header">
+          <div class="d-flex justify-content-between">
+            <div class="ms-header-text">
+              <h6>Category Add</h6>
+              <p>Quick overview on your social media platforms</p>
+            </div>
+            <button type="button" class="btn btn-outline-primary ms-graph-metrics" name="button"
+              routerLink="/dash/categorias"> << Regresar </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="ms-panel">
+        <div class="ms-panel-header">
+          <h6>Category Details</h6>
+        </div>
+        <div class="ms-panel-body">
+          <!-- <ngb-carousel class="ms-arrow-slider" [showNavigationArrows]="true"
+                        [showNavigationIndicators]="false">
+                        <ng-template ngbSlide *ngFor="let image of item.img">
+                            <img [src]="image" alt="{{item.name}}">
+                            <div class="carousel-caption" class="d-none d-md-block carousel-caption">
+                                <h5>{{item.name}}</h5>
+                            </div>
+                        </ng-template>
+                    </ngb-carousel> -->
+          <!--<img class="imagen-upload" [src]="url_imagen | imagen" onerror="this.src='assets/img/upload_image.png'" alt="{{contactForm['controls'].name.value}}">
+          <div *ngIf="contactForm['controls'].name.value" class="carousel-caption" class="d-none d-md-block carousel-caption">
+            <h5>{{contactForm['controls'].name.value}}</h5>
+          </div>
+          <div class="imagen-acta">
+            <img *ngIf="_idCategoria" class="imagen-upload" [src]="url_imagen | imagen" onerror="this.src='assets/img/upload_image.png'" alt="{{contactForm['controls'].name.value}}">
+            <img *ngIf="!_idCategoria" class="imagen-upload" [src]="url_imagen" onerror="this.src='assets/img/upload_image.png'" alt="{{contactForm['controls'].name.value}}">
+            <div class="opciones-upload">
+              <button class="btn" style="cursor: pointer;">Cambiar Imagen</button>
+              <input type="file" name="myfile" accept="image/*" (change)="seleccionar_archivo($event);" />
+            </div>
+          </div>-->
+          <upload-file [optionsFile]='optionsFile' (readFile)="readFile($event)" ></upload-file>
+        </div>
+      </div>
+    </div>
+    <!--<div class=" col-md-6">
+      <div class="ms-panel ms-panel-fh">
+        <div class="ms-panel-body">
+          <h4 class="section-title bold">Product Info</h4>
+          <table class="table ms-profile-information">
+            <tbody>
+              <tr>
+                <th scope="row">Price</th>
+                <td>${{item.price | number:'1.2-2'}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Product Quantity</th>
+                <td>{{item.qty | number:'1.0-0'}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Availiblity</th>
+                <td>
+                  <span class="badge badge-pill badge-primary" *ngIf="item.status === 'Out Of Stock'">Out of
+                    Stock</span>
+                  <span class="badge badge-pill badge-success" *ngIf="item.status === 'In Stock'">In
+                    Stock</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Delivery Charges</th>
+                <td>Free</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="new">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-secondary">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class=" col-md-6">
+      <div class="ms-panel ms-panel-fh">
+        <div class="ms-panel-body">
+          <form [formGroup]="contactForm" (validSubmit)="onSubmit()">
+            <h4 class="section-title bold">Image Category </h4>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <small class="control-label control-label-xs" for="days">
+                    <strong>Show Days</strong></small>
+                  <div class="input-group">
+                   <!-- contactForm['controls'].activated_dates.value --> 
+                    <span *ngFor="let act of listadoFechas;let i = index"
+                      style="padding-right: 25px;">
+                      <label class="ms-switch" for="activated_dates_{{i}}">
+                        <input [disabled]="disabledDays" id="activated_dates_{{i}}" name="activated_dates_{{i}}" (change)="datos(act.id,$event.target.checked)"
+                         type="checkbox" [checked]="act.isChecked"><span class="ms-switch-slider ms-switch-success round"></span>
+                      </label>
+                      <span> {{act.name}} </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <small class="control-label control-label-xs" for="name">
+                    <strong>Name</strong></small>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa-edit fas"></i></span>
+                    </div>
+                    <input class="form-control" id="name" name="name" formControlName="name">
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <small class="control-label" for="short_description"> <strong>Short Description (Max:  {{ 125 - contactForm['controls'].short_description.value.length}} letras) </strong>
+                  </small>
+                  <textarea class="form-control" rows="3" id="short_description" name="short_description" [maxlength]="125"
+                    formControlName="short_description"></textarea>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <small class="control-label" for="description"> <strong>Description</strong>
+                  </small>
+                  <textarea class="form-control" rows="6" id="description" name="description"
+                    formControlName="description"></textarea>
+                  <!-- <p class="description">{{item.longdesc}}</p> -->
+                </div>
+              </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary" >Submit form</button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
